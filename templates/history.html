@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h2>Your Transaction History</h2>
+
+    {% if transactions %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Action</th>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Shares</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in transactions %}
+                    <tr>
+                        <td>{{ "Bought" if row.shares > 0 else "Sold" }}</td>
+                        <td>{{ row["symbol"] }}</td>
+                        <td>{{ row["shares"] }}</td>
+                        <td>{{ row["price"] | usd }}</td> <!-- Apply usd filter here -->
+                        <td>{{ row["date"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No transactions found.</p>
+    {% endif %}
+{% endblock %}

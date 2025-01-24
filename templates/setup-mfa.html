@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Set Up MFA
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center">Set Up Multi-Factor Authentication</h1>
+    <p class="text-center">Scan the QR code below with your authenticator app to enable MFA:</p>
+    <div class="text-center">
+        <!-- QR Code will be dynamically inserted here -->
+        <img src="{{ qr_code_url }}" alt="MFA QR Code">
+    </div>
+    <form action="/verify-mfa-setup" method="post" class="text-center mt-4">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="token" placeholder="Enter MFA Token from App" type="text" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Verify and Enable MFA</button>
+    </form>
+{% endblock %}
