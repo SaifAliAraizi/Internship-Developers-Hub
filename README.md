@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 Finance Web Application
+=======
+
+Internship-Developers-Hub
+>>>>>>> reports-branch
 
 This is a Flask-based finance web application that allows users to register, log in, and manage a stock portfolio. The application provides features such as buying and selling stocks, checking stock quotes, viewing transaction history, and adding funds.
 
@@ -89,4 +94,7 @@ Feel free to fork this repository and submit pull requests for improvements.
 License
 
 This project is open-source and available under the MIT License.
+<<<<<<< HEAD
 
+=======
+>>>>>>> reports-branch
